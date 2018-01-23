@@ -32,7 +32,7 @@ func main() {
 	endpoint := "https://ipinfo.io"
 	r := chi.NewRouter()
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Example: /locate?ip=5.135.186.41 to show country for IP"))
+		w.Write([]byte("<html>Example: <a href=/locate?ip=5.135.186.41>/locate?ip=5.135.186.41</a> to show country for IP</html>"))
 	})
 	r.Get("/locate", locateHandler(client, endpoint))
 	err := http.ListenAndServe(":8080", r)
